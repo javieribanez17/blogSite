@@ -1,0 +1,28 @@
+<%- include("partials/header"); -%>
+    <h1>Home</h1>
+    <% /* %>
+    Implementación con un for convencional
+        <% for(let i=0; i<postsArray.length; i++){ %>
+            <h2>
+                <%= postsArray[i].title %>
+            </h2>
+            <p>
+                <%= postsArray[i].text %>
+            </p>
+        <% } %>
+
+    <% */ %>
+    <p>
+    <%= homeStartingContent %>
+    </p>
+        <% /* %> Implementación con un forEach <% */ %>
+        <% postsArray.forEach(function(postsArray){ %>
+            <h2>
+                <%= postsArray.title %>
+            </h2>
+            <p>
+                <%= postsArray.text.slice(0,100)+" ..." %>
+                <a href= "posts/<%= postsArray.title %>" >Read more</a>
+            </p>
+        <% }) %>
+<%- include("partials/footer"); -%>
